@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Policybazaar Email Builder</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header><h1>Policybazaar Email Builder</h1><span>Upload 3 images &rarr; edit footer text &rarr; screenshot / download</span></header>
+<main>
+  <section class="panel">
+    <h2>1. Campaign name</h2>
+    <input id="name" type="text" placeholder="e.g. oct-email-2" value="oct-email-1">
+    <p class="hint">Used for file names. Letters, numbers and dashes only.</p>
+
+    <h2>2. Images <small>(700 px wide recommended, JPG/PNG)</small></h2>
+    <div id="slots"></div>
+    <button class="ghost" id="sampleBtn" type="button">Load sample images</button>
+
+    <details>
+      <summary>Advanced: image links &amp; alt text</summary>
+      <div id="adv"></div>
+    </details>
+
+    <h2>3. Text below images</h2>
+    <label class="chk"><input type="checkbox" id="on-tc1" checked> Riders / insurer T&amp;C line</label>
+    <textarea id="tc1" rows="3"></textarea>
+    <label class="chk"><input type="checkbox" id="on-tc2" checked> Standard T&amp;C &amp; registration text</label>
+    <textarea id="tc2" rows="7"></textarea>
+    <label class="chk"><input type="checkbox" id="on-ad" checked> Policy / Ad number</label>
+    <input id="ad" type="text">
+    <button class="ghost" id="resetText" type="button">Reset text to default</button>
+  </section>
+
+  <section class="preview">
+    <div class="bar">
+      <div class="seg"><button id="vDesk" class="on" type="button">Desktop</button><button id="vMob" type="button">Mobile</button></div>
+      <div class="actions">
+        <button id="shot" class="primary" type="button">📸 Screenshot (PNG)</button>
+        <button id="zip" type="button">⬇ Download ZIP (HTML + images)</button>
+      </div>
+    </div>
+    <div id="msg" role="status"></div>
+    <div class="frame-wrap"><iframe id="frame" title="Email preview"></iframe></div>
+  </section>
+</main>
+<script src="js/vendor/html2canvas.min.js"></script>
+<script src="js/vendor/jszip.min.js"></script>
+<script src="js/template.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
